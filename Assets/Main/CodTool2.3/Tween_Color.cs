@@ -1,0 +1,15 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Tween_Color : Tween {
+	public Color From = new Color (1,1,1);
+	public Color To = new Color (1,1,1);
+
+	void Start () {
+		Del += (f) => {
+			GetComponent <MaskableGraphic> ().color = From + (To - From) * f;
+		};
+	}
+}
